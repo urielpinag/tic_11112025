@@ -1,0 +1,20 @@
+name: Impresiones en Test 1 # Nombre que aparecerá en GitHub Actions
+
+on:
+  push:
+    branches:
+      - test_1 # 👈 Esto asegura que solo se ejecute al hacer 'push' a la rama 'test_1'
+
+jobs:
+  imprimir_mensajes:
+    runs-on: ubuntu-latest # Define el sistema operativo donde correrá el trabajo
+
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4 # Paso estándar para obtener tu código
+
+      - name: Ejecutar impresiones en consola
+        run: |
+          echo "Impresión 1"
+          echo "Impresión 2"
+          echo "Impresión 3"
