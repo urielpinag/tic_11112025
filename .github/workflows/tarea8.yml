@@ -1,0 +1,15 @@
+name: Tarea Contenedor Alpine
+
+on: [push] 
+
+jobs:
+  ejecutar-en-contenedor:
+    runs-on: ubuntu-latest
+    container:
+      image: alpine:latest
+
+    steps:
+      - name: Paso 1 - Verificar el sistema
+        run: |
+          echo "Estoy corriendo dentro de un contenedor Alpine!"
+          cat /etc/os-release
